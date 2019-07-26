@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/1.0.22/angular-ui-router.js"></script>
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script> 
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js" integrity="sha384-xrRywqdh3PHs8keKZN+8zzc5TX0GRTLCcmivcbNJWm2rs5C8PRhcEn3czEjhAO9o" crossorigin="anonymous"></script>
+<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+<style type="text/css">
+	
+	*{
+      margin: 0px;
+      padding: 0px;
+      font-family: sans-serif;
+	}
+	.sidebar{
+		position: fixed;
+		width: 200px;
+		height: 100%;
+		background-color: #1a1a1a;
+
+	}
+	.sidebar ul li{
+		color:rgba(230,230,230,0.9);
+		list-style: none;
+		padding: 15px 20px;
+		border-bottom: 1px solid rgba(100,100,100,0.3);
+	}
+	.hover :hover{
+		background-color: black;
+	}
+	@media screen and (max-width: 768px)
+	{
+		.sidebar{
+			width: 150px;
+		}
+	}
+</style>
+</head>
+<body>
+<nav class="navbar navbar-expand-md navbar-dark" style="background-color:gray;">
+		<button class="navbar-toggler" data-toggle="collapse" data-target="#collapse_target">
+		<span class="navbar-toggler-icon"></span>
+	    </button>
+	    <div class="collapse navbar-collapse" id="collapse_target">
+		<a class="navbar-brand"><img src="sam.png" style="width: 40px;height: 30px;"><b style="color: white;">  YOUTUBE</b></a>
+		<span class="navbar-text"></span>
+		<u1 class="navbar-nav">
+			<li class="nav-item">
+				<a class="nav-link" href="#">Home</a>		
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="#">what is skull?</a>		
+			</li>
+			
+			<li class="nav-item">
+				<a class="nav-link" href="#">Contact_us</a>		
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="#">Feedback</a>		
+			</li>
+
+		</u1>
+		<form class="sea" >
+			<input style="border: 2px solid white; background-color: white; background-image: line-gradient(to right,#0d0d0d,#e6e6e6); padding-left: 20px;"  type="search" placeholder="Search...">
+			<button class="ae" style="background-color: #8c8c8c; width: 50px; color: white; border-radius: 5px; border-color: #333333;" ><i class="fa fa-search" aria-hidden="true"></i></button>
+		</form>
+		</div>
+	</nav>
+	
+		<div class="row">
+			<div class="col-sm-4">
+    <div class="sidebar">
+     	<ul class="hover">
+     		<li><a ui-sref="home" style="color: white;"> <i class="fa fa-home" aria-hidden="true"></i>HOME</a></li>
+     		<li><a ui-sref="trending" style="color: white;"><i class="fa fa-fire" aria-hidden="true"></i> TRENDING</a></li>
+     		<li><a ui-sref="library" style="color: white;"><i class="fa fa-folder" aria-hidden="true"></i> LIBRARY</a></li>
+     		<li><a ui-sref="history" style="color: white;"><i class="fa fa-history" aria-hidden="true"></i> HISTORY</a></li>
+     	</ul>
+    </div>
+    </div>
+     
+    <div class="col-sm-8">
+     	<ui-view></ui-view>
+    </div>
+</div>
+
+<script>
+var app = angular.module("myApp", ["ui.router"]);
+app.config(function($stateProvider) {
+    $stateProvider
+    .state("home", {
+    	url:"/home",
+        templateUrl : "home.html"
+    })
+    .state("trending", {
+    	url :"/trending",
+        templateUrl : "trending.html"
+    })
+    .state("library", {
+    	url :"/library",
+        templateUrl : "library.html"
+    })
+    .state("history", {
+    	url :"/history",
+        templateUrl : "history.html"
+    });
+});
+</script>
+</body>
+</html>
