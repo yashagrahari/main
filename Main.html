@@ -1,0 +1,48 @@
+                <tr>
+                    <th class="main_heading" ng-bind-html="vm.cat1.A5.heading.main_heading" colspan="8">
+
+                    </th>
+                </tr>
+                <tr>
+                    <th rowspan="2">
+                        {{vm.cat1.A5.heading.heading[0]}}
+                    </th>
+                    <th rowspan="2">
+                        {{vm.cat1.A5.heading.heading[1]}}
+                    </th>
+                    <th rowspan="2">
+                        {{vm.cat1.A5.heading.heading[2]}}
+                    </th>
+                    <th rowspan="2">
+                        {{vm.cat1.A5.heading.heading[3]}}
+                    </th>
+                    <th colspan="4">
+                        {{vm.cat1.A5.heading.heading[4]}}
+                    </th>
+                </tr>
+                <tr>
+                    <th>Below 40 %</th>
+                    <th>40% - 49%</th>
+                    <th>50% - 59%</th>
+                    <th>60% and above</th>
+                </tr>
+                <tr ng-repeat="x in vm.cat1.A5.data">
+                    <td>{{x['data-format']}}</td>
+                    <td>{{x['subject_id__sub_name']}}</td>
+                    <td>{{x['university_marks']['per_passed_students']}}%</td>
+                    <td>{{x['university_marks']['average_external_per']}}%</td>
+                    <td>{{x['university_marks']['below_40']}}%</td>
+                    <td>{{x['university_marks']['in_40_49']}}%</td>
+                    <td>{{x['university_marks']['in_50_59']}}%</td>
+                    <td>{{x['university_marks']['above_60']}}%</td>
+
+                </tr>
+
+            </table>
+
+            <!-- ///////////////A5 old/new/////////////////////////// -->
+
+<br>
+<br>
+
+            <table class="table table-bordered">
